@@ -32,6 +32,12 @@ def get_fibonacci_loop_list(n):
 
 
 def get_fibonacci_loop_variables(n):
+    """
+    Calculate Fibonacci number use a loop and variables to store results
+
+    :param n: (Integer)
+    :return: Integer
+    """
     result = 0
     if n < 2:
         return n
