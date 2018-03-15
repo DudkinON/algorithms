@@ -1,4 +1,10 @@
 def get_fibonacci_recursion(n):
+    """
+    Recursion function calculate Fibonacci number
+
+    :param n: (Integer)
+    :return: Integer
+    """
     if n < 2:
         return n
     else:
