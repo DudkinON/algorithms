@@ -18,4 +18,9 @@ class TestFibonacci(TestCase):
         self.assertEqual(get_fibonacci_loop_list(6), 8)
         self.assertEqual(get_fibonacci_loop_list(10), 55)
 
-
+    def test_loop_variables(self):
+        self.assertEqual(get_fibonacci_loop_variables(0), 0)
+        self.assertEqual(get_fibonacci_loop_variables(1), 1)
+        self.assertEqual(get_fibonacci_loop_variables(2), 1)
+        self.assertEqual(get_fibonacci_loop_variables(6), 8)
+        self.assertEqual(get_fibonacci_loop_variables(10), 55)
