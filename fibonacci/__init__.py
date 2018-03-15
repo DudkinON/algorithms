@@ -12,6 +12,12 @@ def get_fibonacci_recursion(n):
 
 
 def get_fibonacci_loop_list(n):
+    """
+    Calculate Fibonacci number use a loop and a list to store results
+
+    :param n: (Integer)
+    :return: Integer
+    """
     fib_list = list()
     if n < 2:
         return n
