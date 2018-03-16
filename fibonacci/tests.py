@@ -24,3 +24,10 @@ class TestFibonacci(TestCase):
         self.assertEqual(get_fibonacci_loop_variables(2), 1)
         self.assertEqual(get_fibonacci_loop_variables(6), 8)
         self.assertEqual(get_fibonacci_loop_variables(10), 55)
+
+    def test_fibonacci_rec_cache(self):
+        self.assertEqual(get_fib_rec_cache(0), 0)
+        self.assertEqual(get_fib_rec_cache(1), 1)
+        self.assertEqual(get_fib_rec_cache(2), 1)
+        self.assertEqual(get_fib_rec_cache(6), 8)
+        self.assertEqual(get_fib_rec_cache(10), 55)
