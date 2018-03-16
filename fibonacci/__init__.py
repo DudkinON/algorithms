@@ -12,6 +12,12 @@ def get_fibonacci_recursion(n):
 
 
 def cache(f):
+    """
+    Store data in cache_data and return it when recursion function needs it
+
+    :param f: (Function)
+    :return: Function
+    """
     cache_data = {}
 
     def inner(n):
