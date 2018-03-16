@@ -11,6 +11,16 @@ def get_fibonacci_recursion(n):
         return get_fibonacci_recursion(n - 1) + get_fibonacci_recursion(n - 2)
 
 
+def cache(f):
+    cache_data = {}
+
+    def inner(n):
+        if n not in cache_data:
+            cache_data[n] = f(n)
+        return cache_data[n]
+    return inner
+
+
 def get_fibonacci_loop_list(n):
     """
     Calculate Fibonacci number use a loop and a list to store results
