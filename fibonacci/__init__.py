@@ -29,6 +29,12 @@ def cache(f):
 
 @cache
 def get_fib_rec_cache(n):
+    """
+    Recursion function with cache decorator calculate Fibonacci number
+
+    :param n: (Integer)
+    :return: Integer
+    """
     return n if n < 2 else get_fib_rec_cache(n - 1) + get_fib_rec_cache(n - 2)
 
 
