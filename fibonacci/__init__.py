@@ -21,6 +21,11 @@ def cache(f):
     return inner
 
 
+@cache
+def get_fib_rec_cache(n):
+    return n if n < 2 else get_fib_rec_cache(n - 1) + get_fib_rec_cache(n - 2)
+
+
 def get_fibonacci_loop_list(n):
     """
     Calculate Fibonacci number use a loop and a list to store results
