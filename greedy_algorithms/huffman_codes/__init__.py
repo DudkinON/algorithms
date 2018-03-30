@@ -14,6 +14,11 @@ class Leaf(namedtuple("Leaf", ["char"])):
 
 
 def huffman_encode(string):
+    """
+    Get string and return dictionary with codes
+    :param string:
+    :return: dict
+    """
     heap = []
     for char, count in Counter(string).items():
         heap.append((count, len(heap), Leaf(char)))
