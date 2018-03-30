@@ -1,4 +1,4 @@
-import heapq
+from heapq import heapify, heappop, heappush
 from collections import Counter, namedtuple
 
 
@@ -23,13 +23,13 @@ def huffman_encode(string):
     for char, count in Counter(string).items():
         heap.append((count, len(heap), Leaf(char)))
 
-    heapq.heapify(heap)
+    heapify(heap)
 
     counter = len(heap)
     while len(heap) > 1:
-        count_one, _count_one, left = heapq.heappop(heap)
-        count_two, _count_two, right = heapq.heappop(heap)
-        heapq.heappush(heap, (count_one + count_two, counter, Node(left, right)))
+        count_one, _count_one, left = heappop(heap)
+        count_two, _count_two, right = heappop(heap)
+        heappush(heap, (count_one + count_two, counter, Node(left, right)))
         counter += 1
 
     code = {}
