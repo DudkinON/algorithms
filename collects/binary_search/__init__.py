@@ -2,8 +2,17 @@ from sys import stdin
 
 
 def binary_search(pool, target):
+    """
+    Search a digit in sorted list of numbers
+    if find return index else return -1
+
+    :param pool: list of integers
+    :param target: int
+    :return: index
+    """
     pool_length = len(pool)
 
+    # filter if value more or less when max and min in list
     if pool_length < 1 or target < pool[0] or target > pool[-1]:
         return -1
 
