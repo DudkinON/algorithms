@@ -29,6 +29,12 @@ def marriage(a, b):
 
 
 def marriage_sort(l):
+    """
+    Sort a list and return it
+
+    :param l: list
+    :return:
+    """
 
     if len(l) < 2:
         return l
