@@ -2,6 +2,13 @@ from sys import stdin
 
 
 def marriage(a, b):
+    """
+    Marriage of two sorted lists and return a new one
+
+    :param a: list
+    :param b: list
+    :return: list
+    """
     d = []
     while len(a) + len(b) > 0:
         len_a = len(a)
