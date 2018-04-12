@@ -1,4 +1,12 @@
 def russian_peasants(a, b):
+    """
+    Implementation of Russian Peasant Algorithm. Work with positive and
+    negative integers.
+
+    :param a: int
+    :param b: int
+    :return: int
+    """
     if a < 0 < b or b < 0 < a:
         positive = False
     else:
