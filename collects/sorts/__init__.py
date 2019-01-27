@@ -25,7 +25,7 @@ def bubble_sort(lst):
 def selection_sort(lst):
     """
     Implementation of selection sort algorithm
-    
+
     :param lst: list
     :return: sorted list
     """
@@ -47,7 +47,12 @@ def selection_sort(lst):
 
 
 def insertion_sort(lst):
+    """
+    Implementation of insertion sort algorithm
 
+    :param lst: list
+    :return: sorted list
+    """
     length = len(lst)
 
     if length < 2:
