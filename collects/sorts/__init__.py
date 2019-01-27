@@ -2,7 +2,12 @@ from sys import stdin
 
 
 def bubble_sort(lst):
+    """
+    Implementation of bubble sort algorithm
 
+    :param lst: list
+    :return: sorted list
+    """
     length = len(lst)
 
     if length < 2:
