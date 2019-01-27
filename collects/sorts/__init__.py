@@ -1,25 +1,27 @@
 from sys import stdin
 
-counter = 0
 
+def bubble_sort(lst):
 
-def sort(l):
+    length = len(lst)
 
-    q = []
-    c = 0
+    if length < 2:
+        return lst
 
-    for i in range(len(l)):
-        if l[i] < l[i + 1]:
-            print(l[i])
-    return q
+    for i in range(length):
+        for j in range(length - 1):
+            if lst[j] > lst[j + 1]:
+                temp = lst[j]
+                lst[j] = lst[j + 1]
+                lst[j + 1] = temp
+    return lst
 
 
 def main():
-    stdin.readline().split()
-    unsorted = [[int(n)] for n in stdin.readline().split()]
-    # assert amount == len(unsorted)
-    print(sort(unsorted))
-    # print(counter)
+    print("Enter numbers separated with whitespace: ")
+    unsorted = [int(n) for n in stdin.readline().split()]
+    print("unsorted list:\t", unsorted)
+    print("bubble_sort:\t", bubble_sort(unsorted))
 
 
 if __name__ == '__main__':
