@@ -54,6 +54,34 @@ def insertion_sort(lst):
     return lst
 
 
+def merge(a, b):
+
+    merged_list = []
+    left_index = 0
+    right_index = 0
+
+    while left_index < len(a) and right_index < len(b):
+        if a[left_index] < b[right_index]:
+            merged_list.append(a[left_index])
+            left_index += 1
+        else:
+            merged_list.append(b[right_index])
+            right_index += 1
+
+    return merged_list + a[left_index:] + b[right_index:]
+
+
+def merge_sort(lst):
+
+    if len(lst) < 2:
+        return lst
+
+    left = lst[:len(lst) // 2]
+    right = lst[len(lst) // 2:]
+
+    return merge(merge_sort(left), merge_sort(right))
+
+
 def main():
     print("Enter numbers separated with whitespace: ")
     unsorted = [int(n) for n in stdin.readline().split()]
@@ -61,6 +89,7 @@ def main():
     print("bubble_sort:\t", bubble_sort(unsorted))
     print("selection_sort:\t", selection_sort(unsorted))
     print("insertion_sort:\t", insertion_sort(unsorted))
+    print("merge_sort:\t\t", merge_sort(unsorted))
 
 
 if __name__ == '__main__':
