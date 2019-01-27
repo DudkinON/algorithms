@@ -70,7 +70,13 @@ def insertion_sort(lst):
 
 
 def merge(a, b):
+    """
+    Get two lists and merge them with sort
 
+    :param a: list
+    :param b: list
+    :return: merged sorted list
+    """
     merged_list = []
     left_index = 0
     right_index = 0
@@ -87,7 +93,15 @@ def merge(a, b):
 
 
 def merge_sort(lst):
+    """
+    Get a list and recursively separate it on two equal parts,
+    until each part has only one item left, then sort them using
+    merge sort algorithm
 
+    :param lst: list
+    :return: sorted list
+    """
+    
     if len(lst) < 2:
         return lst
 
