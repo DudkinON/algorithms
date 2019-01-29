@@ -9,7 +9,14 @@ def factorial(number):
 
 
 def cache(f):
+    """
+    Function decorator, prevents unnecessary calling of the function.
+    Improve performance (Time complexity) from O(2^n) to O(n), but
+    increase Space complexity from O(1) to O(n).
 
+    :param f: Function
+    :return: Function
+    """
     cache_data = {}
 
     def inner(n):
