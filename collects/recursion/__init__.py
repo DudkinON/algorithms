@@ -38,6 +38,13 @@ def fibonacci(n):
 
 
 def invert_string(s, result=""):
+    """
+    Get a string and recursively invert it
+
+    :param s: string
+    :param result: string
+    :return: string
+    """
     if len(s) > 0:
         result += s[-1]
         return invert_string(s[:-1], result)
