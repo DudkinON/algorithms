@@ -1,4 +1,10 @@
 def factorial(number):
+    """
+    Recursive counting factorial of a given number
+
+    :param number: (integer)
+    :return: number (integer)
+    """
     return number if number < 3 else number * factorial(number - 1)
 
 
