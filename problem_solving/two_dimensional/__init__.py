@@ -26,7 +26,16 @@ def rotate(arr, n):
 
 
 def rotate_less_memory(arr, n):
+    """
+    Rotate two dimensional array by 90 degrees with additional
+    memory space complexity O(1)
 
+    :param arr: List[List[int]] - two dimensional array
+    :param n: Integer - size of array
+    :return: List[List[int]] - two dimensional array
+    """
+
+    # Put to the new array new numbers
     for i in range(ceil(n/2)):
         for j in range(floor(n/2)):
 
