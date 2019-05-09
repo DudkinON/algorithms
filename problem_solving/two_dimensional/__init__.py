@@ -54,9 +54,23 @@ def rotate_less_memory(arr, n):
 
 
 def click(field, nr, nc, x, y):
+    """
+    Depends on the coordinates x and y or fills all
+    related empty fields with - 2 or returns the array
+    without changes
 
+    :param field: List[List[int]] - Field of mines
+    :param nr: Integer - number of rows
+    :param nc: Integer - number of columns
+    :param x: Integer - x by X direction
+    :param y: Integer - y by Y direction
+    :return: List[List[int]] - Field of mines
+    """
+
+    # Create a queue
     queue = Queue()
 
+    # If a coordinate is 0 add to the queue and change value to -2
     if field[x][y] == 0:
         field[x][y] = -2
         queue.put((x, y))
