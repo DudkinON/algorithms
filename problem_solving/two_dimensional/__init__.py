@@ -1,3 +1,4 @@
+from queue import Queue
 from copy import deepcopy
 from math import ceil, floor
 
@@ -50,3 +51,22 @@ def rotate_less_memory(arr, n):
                 new_i, new_j = new_j, n - 1 - new_i
 
     return arr
+
+
+def click(field, nr, nc, x, y):
+
+    queue = Queue()
+
+    if field[x][y] == 0:
+        field[x][y] = -2
+        queue.put((x, y))
+
+    while not queue.empty():
+        x, y = queue.get()
+        for i in range(x - 1, x + 2):
+            for j in range(y - 1, y + 2):
+                if 0 <= i < nr and nc > j >= 0 == field[i][j]:
+                    field[i][j] = -2
+                    queue.put((i, j))
+
+    return field
