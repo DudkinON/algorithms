@@ -1,6 +1,6 @@
 from unittest import TestCase
 from problem_solving.two_dimensional import rotate, rotate_less_memory
-from problem_solving.two_dimensional import click, mine_sweeper
+from problem_solving.two_dimensional import click, mine_sweeper, bfs
 
 
 class TwoDimensionalTests(TestCase):
@@ -47,3 +47,36 @@ class TwoDimensionalTests(TestCase):
 
         self.assertEqual(rotate_less_memory(data1, 3), a1)
         self.assertEqual(rotate_less_memory(data2, 4), a2)
+
+    def test_click(self):
+        arr1 = [[0, 0, 0, 0, 0],
+                [0, 1, 1, 1, 0],
+                [0, 1, -1, 1, 0]]
+
+        a1 = [[0, 0, 0, 0, 0],
+              [0, 1, 1, 1, 0],
+              [0, 1, -1, 1, 0]]
+
+        a2 = [[-2, -2, -2, -2, -2],
+              [-2, 1, 1, 1, -2],
+              [-2, 1, -1, 1, -2]]
+
+        arr2 = [[-1, 1, 0, 0],
+                [1, 1, 0, 0],
+                [0, 0, 1, 1],
+                [0, 0, 1, -1]]
+
+        a3 = [[-1, 1, 0, 0],
+              [1, 1, 0, 0],
+              [0, 0, 1, 1],
+              [0, 0, 1, -1]]
+
+        a4 = [[-1, 1, -2, -2],
+              [1, 1, -2, -2],
+              [-2, -2, 1, 1],
+              [-2, -2, 1, -1]]
+
+        self.assertEqual(click(arr1, 3, 5, 2, 2), a1)
+        self.assertEqual(click(arr1, 3, 5, 1, 4), a2)
+        self.assertEqual(click(arr2, 4, 4, 0, 1), a3)
+        self.assertEqual(click(arr2, 4, 4, 1, 3), a4)
