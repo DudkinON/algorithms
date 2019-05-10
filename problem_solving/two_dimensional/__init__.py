@@ -87,9 +87,19 @@ def click(field, nr, nc, x, y):
 
 
 def mine_sweeper(bombs, num_rows, num_cols):
+    """
+    Generates mine field with given data
 
+    :param bombs: List[List[int]] - represent list of bombs coordinates
+    :param num_rows: Integer - number of rows
+    :param num_cols: Integer - number of columns
+    :return: List[List[int]] - 2D array
+    """
+
+    # Generate empty two dimensional array
     field = [[0 for i in range(num_cols)] for j in range(num_rows)]
 
+    # fill it up with bombs as -1 and numbers around
     for bomb in bombs:
         (x, y) = bomb
         field[x][y] = -1
