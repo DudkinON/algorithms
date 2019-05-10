@@ -84,3 +84,19 @@ def click(field, nr, nc, x, y):
                     queue.put((i, j))
 
     return field
+
+
+def mine_sweeper(bombs, num_rows, num_cols):
+
+    field = [[0 for i in range(num_cols)] for j in range(num_rows)]
+
+    for bomb in bombs:
+        (x, y) = bomb
+        field[x][y] = -1
+        for i in range(x - 1, x + 2):
+            for j in range(y - 1, y + 2):
+                if 0 <= i < num_rows \
+                        and 0 <= j < num_cols \
+                        and field[i][j] != -1:
+                    field[i][j] += 1
+    return field
