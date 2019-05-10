@@ -80,3 +80,24 @@ class TwoDimensionalTests(TestCase):
         self.assertEqual(click(arr1, 3, 5, 1, 4), a2)
         self.assertEqual(click(arr2, 4, 4, 0, 1), a3)
         self.assertEqual(click(arr2, 4, 4, 1, 3), a4)
+
+    def test_mine_sweeper(self):
+        result1 = mine_sweeper([[0, 2], [2, 0]], 3, 3)
+        a1 = [[0, 1, -1],
+              [1, 2, 1],
+              [-1, 1, 0]]
+        result2 = mine_sweeper([[0, 0], [0, 1], [1, 2]], 3, 4)
+        a2 = [[-1, -1, 2, 1],
+              [2, 3, -1, 1],
+              [0, 1, 1, 1]]
+        result3 = mine_sweeper([[1, 1], [1, 2],
+                                [2, 2], [4, 3]], 5, 5)
+        a3 = [[1, 2, 2, 1, 0],
+              [1, -1, -1, 2, 0],
+              [1, 3, -1, 2, 0],
+              [0, 1, 2, 2, 1],
+              [0, 0, 1, -1, 1]]
+
+        self.assertEqual(result1, a1)
+        self.assertEqual(result2, a2)
+        self.assertEqual(result3, a3)
