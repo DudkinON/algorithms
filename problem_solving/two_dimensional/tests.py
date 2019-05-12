@@ -101,3 +101,19 @@ class TwoDimensionalTests(TestCase):
         self.assertEqual(result1, a1)
         self.assertEqual(result2, a2)
         self.assertEqual(result3, a3)
+
+    def test_bfs(self):
+
+        grid = [
+            [0, 0, 0, 0, 9, 0, 0],
+            [0, 9, 9, 0, 0, 0, 0],
+            [0, 0, 9, 0, 9, 0, 0],
+            [0, 9, 9, 0, 9, 0, 9],
+            [0, 9, 1, 0, 0, 0, 0],
+        ]
+
+        a1 = [(0, 0), (1, 0), (2, 0), (3, 0), (3, 1), (3, 2), (3, 3), (3, 4), (2, 4)]
+        a2 = [(5, 3), (5, 4), (4, 4), (3, 4), (2, 4)]
+
+        self.assertEqual(bfs(grid, (0, 0)), a1)
+        self.assertEqual(bfs(grid, (5, 3)), a2)
