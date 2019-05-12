@@ -114,6 +114,13 @@ def mine_sweeper(bombs, num_rows, num_cols):
 
 
 def bfs(_grid, start):
+    """
+    Finds and returns shortest path
+
+    :param _grid: List[List[int]]2D array
+    :param start: Tuple(int) - Start position
+    :return: List[Tuple(int)] - Shortest path
+    """
 
     queue = deque([[start]])
     seen = {}
