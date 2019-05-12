@@ -1,6 +1,7 @@
 from queue import Queue
 from copy import deepcopy
 from math import ceil, floor
+from collections import deque
 
 
 def rotate(arr, n):
@@ -110,3 +111,28 @@ def mine_sweeper(bombs, num_rows, num_cols):
                         and field[i][j] != -1:
                     field[i][j] += 1
     return field
+
+
+def bfs(_grid, start):
+
+    queue = deque([[start]])
+    seen = {}
+
+    def get_id(_x, _y):
+        return "{}_{}".format(_x, _y)
+
+    while queue:
+        _path = queue.popleft()
+        x, y = _path[-1]
+
+        if _grid[y][x] == 1:
+            return _path
+
+        for _x, _y in [(x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)]:
+
+            if 0 <= _x < len(_grid[0]) \
+                    and 0 <= _y < len(_grid) \
+                    and _grid[_y][_x] != 9 \
+                    and seen.get(get_id(_x, _y)) is None:
+                queue.append(_path + [(_x, _y)])
+                seen[get_id(_x, _y)] = (_x, _y)
