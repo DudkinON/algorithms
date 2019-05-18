@@ -1,4 +1,10 @@
 def longest_substr(s: str) -> int:
+    """
+    Searches for longest substring without repeating characters
+
+    :param s: String
+    :return: Integer
+    """
 
     max_len, sub = 0, ""
 
