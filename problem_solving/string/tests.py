@@ -1,6 +1,7 @@
 from unittest import TestCase
 from problem_solving.string.longest_substr import longest_substr
 from problem_solving.string.roman import roman_to_int
+from problem_solving.string.str2int import str_to_int
 
 
 class TestStringFunctions(TestCase):
@@ -16,3 +17,10 @@ class TestStringFunctions(TestCase):
         self.assertEqual(roman_to_int("LVIII"), 58)
         self.assertEqual(roman_to_int("LVIII"), 58)
         self.assertEqual(roman_to_int("MCMXCIV"), 1994)
+
+    def test_str_to_int(self):
+        self.assertEqual(str_to_int("-20 e"), -20)
+        self.assertEqual(str_to_int("  -20"), -20)
+        self.assertEqual(str_to_int(" 3-20"), 3)
+        self.assertEqual(str_to_int("   -91283472332"), -2147483648)
+        self.assertEqual(str_to_int("  91283472332"), 2147483647)
