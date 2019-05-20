@@ -1,4 +1,11 @@
 def str_to_int(s: str) -> int:
+    """
+    Converts string to integer if string starts from
+    whitespace minus plus or integer
+
+    :param s: String
+    :return: Integer
+    """
 
     s, result = s.lstrip(), ""
 
