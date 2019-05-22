@@ -1,5 +1,11 @@
 def three_sum(nums):
+    """
+    From given array find all numbers (amount of three) the
+    sum of which gives 0. Returns list of list of numbers
 
+    :param nums: List[int]
+    :return: List[List[int]]
+    """
     n, cache, visited, output, zeros = len(nums), {}, {}, [], 0
 
     if n < 3:
