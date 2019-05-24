@@ -2,6 +2,12 @@ from typing import List
 
 
 def group_anagrams(strs: List[str]) -> List[List[str]]:
+    """
+    Groups anagrams and returns them
+
+    :param strs: List[str]
+    :return: List[List[str]]
+    """
 
     _map = {}
 
