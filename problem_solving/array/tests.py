@@ -1,6 +1,7 @@
 from unittest import TestCase
 from problem_solving.array.three_sum import three_sum
 from problem_solving.array.merge import merge
+from problem_solving.array.anagram import group_anagrams
 
 
 class TestArrays(TestCase):
@@ -29,3 +30,8 @@ class TestArrays(TestCase):
         self.assertEqual(case2, [0, 1, 2, 4, 6])
         self.assertEqual(case3, [1, 2, 3, 4, 5, 6])
         self.assertEqual(case4, [1, 2, 3, 4, 5, 6])
+
+    def test_group_anagrams(self):
+        arr = ["eat", "tea", "tan", "ate", "nat", "bat"]
+        result = [['eat', 'tea', 'ate'], ['tan', 'nat'], ['bat']]
+        self.assertEqual(group_anagrams(arr), result)
