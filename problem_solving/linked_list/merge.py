@@ -2,6 +2,14 @@ from data_structures import Node
 
 
 def merge_lists(list1: Node, list2: Node) -> Node:
+    """
+    Gets two sorted linked lists, and merges them. Returns
+    sorted linked list
+
+    :param list1: Linked list
+    :param list2: Linked list
+    :return: Linked list
+    """
 
     if not list1:
         return list2
