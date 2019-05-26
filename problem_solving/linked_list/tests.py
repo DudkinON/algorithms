@@ -1,6 +1,7 @@
 from unittest import TestCase
 from data_structures import Node
 from problem_solving.linked_list.find_n_from_end import nth_from_last
+from problem_solving.linked_list.merge import merge_lists
 
 
 class TestLinkList(TestCase):
@@ -21,6 +22,13 @@ class TestLinkList(TestCase):
 
         return head
 
+    def get_list(self, _from, _to, step):
+        head = tail = Node(_from)
+        for num in range(_from + step, _to + 1, step):
+            tail.next = tail = Node(num)
+
+        return head
+
     def test_nth_from_last(self):
         head = self.gen_list(7, 1)
 
@@ -29,3 +37,12 @@ class TestLinkList(TestCase):
         self.assertEqual(result, 1)
         self.assertEqual(nth_from_last(head, 8), None)
         self.assertEqual(nth_from_last(None, 2), None)
+
+    def test_merge_lists(self):
+
+        node = merge_lists(self.get_list(1, 5, 2), self.get_list(2, 4, 2))
+        val = 1
+        while node:
+            self.assertEqual(node.value, val)
+            val += 1
+            node = node.next
