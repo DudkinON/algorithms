@@ -2,6 +2,7 @@ from unittest import TestCase
 from problem_solving.array.three_sum import three_sum
 from problem_solving.array.merge import merge
 from problem_solving.array.anagram import group_anagrams
+from problem_solving.array.sub import max_sub_array_length
 
 
 class TestArrays(TestCase):
@@ -35,3 +36,7 @@ class TestArrays(TestCase):
         arr = ["eat", "tea", "tan", "ate", "nat", "bat"]
         result = [['eat', 'tea', 'ate'], ['tan', 'nat'], ['bat']]
         self.assertEqual(group_anagrams(arr), result)
+
+    def test_max_sub_array_length(self):
+        self.assertEqual(max_sub_array_length([1, -1, 5, -2, 3], 3), 4)
+        self.assertEqual(max_sub_array_length([-2, -1, 2, 1], 1), 2)
