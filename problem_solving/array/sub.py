@@ -2,6 +2,13 @@ from typing import List
 
 
 def max_sub_array_length(nums: List[int], k: int):
+    """
+    Calculates maximum length of sub array sum equals given k
+
+    :param nums: List[int]
+    :param k: Integer
+    :return: Integer
+    """
 
     _map = {0: -1}
     _sum = max_len = 0
