@@ -40,3 +40,4 @@ class TestArrays(TestCase):
     def test_max_sub_array_length(self):
         self.assertEqual(max_sub_array_length([1, -1, 5, -2, 3], 3), 4)
         self.assertEqual(max_sub_array_length([-2, -1, 2, 1], 1), 2)
+        self.assertEqual(max_sub_array_length([], 1), 0)
