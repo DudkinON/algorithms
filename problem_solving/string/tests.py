@@ -3,6 +3,7 @@ from problem_solving.string.longest_substr import longest_substr
 from problem_solving.string.roman import roman_to_int
 from problem_solving.string.str2int import str_to_int
 from problem_solving.string.unique import is_unique
+from problem_solving.string.anagram import is_anagram
 
 
 class TestStringFunctions(TestCase):
@@ -33,3 +34,11 @@ class TestStringFunctions(TestCase):
         self.assertEqual(is_unique("  "), False)
         self.assertEqual(is_unique(" abracadabra"), False)
         self.assertEqual(is_unique("not unique string"), False)
+
+    def test_is_anagram(self):
+        self.assertEqual(is_anagram("abcd", "cbda"), True)
+        self.assertEqual(is_anagram("bird", "rdbi"), True)
+        self.assertEqual(is_anagram("The sky", "Tseh ky"), True)
+        self.assertEqual(is_anagram("short one", "short on"), False)
+        self.assertEqual(is_anagram("longer", "longer "), False)
+        self.assertEqual(is_anagram("wrong", "vrong"), False)
