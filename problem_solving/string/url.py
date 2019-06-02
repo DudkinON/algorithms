@@ -1,4 +1,11 @@
 def urlify(s: str, length: int) -> str:
+    """
+    Replaces single spaces with %20 and fills in trailing spaces
+
+    :param s: String
+    :param length: Integer
+    :return: String
+    """
 
     index = len(s)
 
