@@ -2,6 +2,7 @@ from unittest import TestCase
 from problem_solving.string.longest_substr import longest_substr
 from problem_solving.string.roman import roman_to_int
 from problem_solving.string.str2int import str_to_int
+from problem_solving.string.unique import is_unique
 
 
 class TestStringFunctions(TestCase):
@@ -24,3 +25,11 @@ class TestStringFunctions(TestCase):
         self.assertEqual(str_to_int(" 3-20"), 3)
         self.assertEqual(str_to_int("   -91283472332"), -2147483648)
         self.assertEqual(str_to_int("  91283472332"), 2147483647)
+
+    def test_is_unique(self):
+        self.assertEqual(is_unique("abcde"), True)
+        self.assertEqual(is_unique("!@^4 abcde"), True)
+        self.assertEqual(is_unique("_BRF4tr"), True)
+        self.assertEqual(is_unique("  "), False)
+        self.assertEqual(is_unique(" abracadabra"), False)
+        self.assertEqual(is_unique("not unique string"), False)
