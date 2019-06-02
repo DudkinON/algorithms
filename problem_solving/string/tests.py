@@ -4,6 +4,7 @@ from problem_solving.string.roman import roman_to_int
 from problem_solving.string.str2int import str_to_int
 from problem_solving.string.unique import is_unique
 from problem_solving.string.anagram import is_anagram
+from problem_solving.string.url import urlify
 
 
 class TestStringFunctions(TestCase):
@@ -42,3 +43,10 @@ class TestStringFunctions(TestCase):
         self.assertEqual(is_anagram("short one", "short on"), False)
         self.assertEqual(is_anagram("longer", "longer "), False)
         self.assertEqual(is_anagram("wrong", "vrong"), False)
+
+    def test_urlify(self):
+        self.assertEqual(urlify("Mr John Doe   ", 11), "Mr%20John%20Doe")
+        self.assertEqual(urlify("John + Doe   ", 10), "John%20+%20Doe")
+        self.assertEqual(urlify("  ", 1), "%20")
+        self.assertEqual(urlify(" !  ", 2), "%20!")
+        self.assertEqual(urlify("", 0), "")
