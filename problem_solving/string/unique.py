@@ -1,4 +1,10 @@
 def is_unique(s: str) -> bool:
+    """
+    Check if all characters in the given string are unique
+
+    :param s: String
+    :return: Boolean
+    """
 
     if len(s) > 128:
         return False
