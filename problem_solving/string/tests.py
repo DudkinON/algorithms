@@ -6,6 +6,7 @@ from problem_solving.string.unique import is_unique
 from problem_solving.string.anagram import is_anagram
 from problem_solving.string.url import urlify
 from problem_solving.string.anagram import pal_anagram
+from problem_solving.string.one_away import one_away
 
 
 class TestStringFunctions(TestCase):
@@ -65,4 +66,32 @@ class TestStringFunctions(TestCase):
 
         for [test_string, expected] in data:
             actual = pal_anagram(test_string)
+            self.assertEqual(actual, expected)
+
+    def test_one_away(self):
+        data = [
+            ('pale', 'ple', True),
+            ('pales', 'pale', True),
+            ('pale', 'bale', True),
+            ('paleabc', 'pleabc', True),
+            ('pale', 'ble', False),
+            ('a', 'b', True),
+            ('', 'd', True),
+            ('d', 'de', True),
+            ('pale', 'pale', True),
+            ('pale', 'ple', True),
+            ('ple', 'pale', True),
+            ('pale', 'bale', True),
+            ('pale', 'bake', False),
+            ('pale', 'pse', False),
+            ('ples', 'pales', True),
+            ('pale', 'pas', False),
+            ('pas', 'pale', False),
+            ('pale', 'pkle', True),
+            ('pkle', 'pable', False),
+            ('pal', 'palks', False),
+            ('palks', 'pal', False)
+        ]
+        for [test_s1, test_s2, expected] in data:
+            actual = one_away(test_s1, test_s2)
             self.assertEqual(actual, expected)
