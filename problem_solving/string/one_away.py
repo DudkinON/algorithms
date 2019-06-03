@@ -1,5 +1,12 @@
 def one_away(s: str, t: str) -> bool:
+    """
+    Checks if a string can converted to another string with a single edit
 
+    :param s: String
+    :param t: String
+    :return: Boolean
+    """
+    
     len_diff = abs(len(s) - len(t))
 
     if len_diff > 1:
