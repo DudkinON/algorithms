@@ -25,7 +25,12 @@ def is_anagram(s: str, t: str) -> bool:
 
 
 def pal_anagram(s: str) -> bool:
+    """
+    Checks that string is a permutation of palindrome
 
+    :param s: String
+    :return: Boolean
+    """
     _map = [0 for _ in range(ord('z') - ord('a') + 1)]
 
     a, z, A, Z = ord('a'), ord('z'), ord('A'), ord('Z')
