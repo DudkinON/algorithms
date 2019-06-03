@@ -5,6 +5,7 @@ from problem_solving.string.str2int import str_to_int
 from problem_solving.string.unique import is_unique
 from problem_solving.string.anagram import is_anagram
 from problem_solving.string.url import urlify
+from problem_solving.string.anagram import pal_anagram
 
 
 class TestStringFunctions(TestCase):
@@ -50,3 +51,18 @@ class TestStringFunctions(TestCase):
         self.assertEqual(urlify("  ", 1), "%20")
         self.assertEqual(urlify(" !  ", 2), "%20!")
         self.assertEqual(urlify("", 0), "")
+
+    def test_pal_anagram(self):
+        data = [
+            ('Tact Coa', True),
+            ('jhsabckuj ahjsbckj', True),
+            ('Able was I ere I saw Elba', True),
+            ('So patient a nurse to nurse a patient so', False),
+            ('Random Words', False),
+            ('Not a Palindrome', False),
+            ('no x in nixon', True),
+            ('azAZ', True)]
+
+        for [test_string, expected] in data:
+            actual = pal_anagram(test_string)
+            self.assertEqual(actual, expected)
