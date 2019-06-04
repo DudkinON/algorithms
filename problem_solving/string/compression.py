@@ -1,5 +1,11 @@
 def string_compression(s: str) -> str:
+    """
+    Compresses a given string by change repetitive characters
+    with character and its amount
 
+    :param s:
+    :return:
+    """
     if not len(s):
         return s
 
