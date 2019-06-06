@@ -173,3 +173,36 @@ def bfs(_grid, start):
                     and seen.get(get_id(_x, _y)) is None:
                 queue.append(_path + [(_x, _y)])
                 seen[get_id(_x, _y)] = (_x, _y)
+
+
+def zero_matrix(matrix: List[List[int]]) -> List[List[int]]:
+
+    # return empty array if matrix is None or empty
+    if not len(matrix):
+        return []
+
+    # create a map of rows
+    zero_rows = [False] * len(matrix)
+
+    # create a map of columns
+    zero_cols = [False] * len(matrix[0])
+
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            if matrix[i][j] == 0:
+                # if founded 0 mark row and columns
+                zero_rows[i] = True
+                zero_cols[j] = True
+
+    # fill up rows with zeros
+    for i in range(len(zero_rows)):
+        if zero_rows[i]:
+            matrix[i] = [0] * len(matrix[i])
+
+    # fill up columns with zeros
+    for j in range(len(zero_cols)):
+        if zero_cols[j]:
+            for row in range(len(matrix)):
+                matrix[row][j] = 0
+
+    return matrix
