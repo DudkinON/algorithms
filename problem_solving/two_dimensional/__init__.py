@@ -176,6 +176,13 @@ def bfs(_grid, start):
 
 
 def zero_matrix(matrix: List[List[int]]) -> List[List[int]]:
+    """
+    Fill up the current row and the column if current element
+    in the given matrix is zero
+
+    :param matrix: List[List[int]]
+    :return: List[List[int]]
+    """
 
     # return empty array if matrix is None or empty
     if not len(matrix):
