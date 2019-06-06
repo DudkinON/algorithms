@@ -29,6 +29,12 @@ def rotate(arr, n):
 
 
 def rotate_matrix(matrix: List[List[int]]) -> List[List[int]]:
+    """
+    Rotate a matrix 90 degrees clockwise
+
+    :param matrix: List[List[int]]
+    :return: List[List[int]]
+    """
 
     for layer in range(len(matrix) // 2):
         for i in range(layer, len(matrix) - layer - 1):
