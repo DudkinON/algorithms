@@ -2,6 +2,7 @@ from queue import Queue
 from copy import deepcopy
 from math import ceil, floor
 from collections import deque
+from typing import List
 
 
 def rotate(arr, n):
@@ -25,6 +26,29 @@ def rotate(arr, n):
             rotated[new_i][new_j] = arr[i][j]
 
     return rotated
+
+
+def rotate_matrix(matrix: List[List[int]]) -> List[List[int]]:
+
+    for layer in range(len(matrix) // 2):
+        for i in range(layer, len(matrix) - layer - 1):
+
+            # save a first element
+            first = matrix[layer][i]
+
+            # rewrite first element with forth element
+            matrix[layer][i] = matrix[-i - 1][layer]
+
+            # rewrite fourth element with forth third element
+            matrix[-i - 1][layer] = matrix[-layer - 1][-i - 1]
+
+            # rewrite third element with second element
+            matrix[-layer - 1][-i - 1] = matrix[i][-layer - 1]
+
+            # rewrite second element with first element
+            matrix[i][-layer - 1] = first
+
+    return matrix
 
 
 def rotate_less_memory(arr, n):
