@@ -1,7 +1,7 @@
 from unittest import TestCase
 from problem_solving.two_dimensional import rotate, rotate_less_memory
 from problem_solving.two_dimensional import click, mine_sweeper, bfs
-from problem_solving.two_dimensional import rotate_matrix
+from problem_solving.two_dimensional import rotate_matrix, zero_matrix
 
 
 class TwoDimensionalTests(TestCase):
@@ -147,4 +147,34 @@ class TwoDimensionalTests(TestCase):
         ]
         for [test_matrix, expected] in data:
             actual = rotate_matrix(test_matrix)
+            self.assertEqual(actual, expected)
+
+    def test_zero_matrix(self):
+        data = [
+            ([], []),
+            ([[]], [[]]),
+            ([
+                [0, 1],
+                [2, 3]
+            ], [
+                [0, 0],
+                [0, 3]
+            ]),
+            ([
+                 [1, 2, 3, 4, 0],
+                 [6, 0, 8, 9, 10],
+                 [11, 12, 13, 14, 15],
+                 [16, 0, 18, 19, 20],
+                 [21, 22, 23, 24, 25]
+             ], [
+                 [0, 0, 0, 0, 0],
+                 [0, 0, 0, 0, 0],
+                 [11, 0, 13, 14, 0],
+                 [0, 0, 0, 0, 0],
+                 [21, 0, 23, 24, 0]
+             ])
+        ]
+
+        for [test_matrix, expected] in data:
+            actual = zero_matrix(test_matrix)
             self.assertEqual(actual, expected)
