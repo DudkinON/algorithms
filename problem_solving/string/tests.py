@@ -8,6 +8,7 @@ from problem_solving.string.url import urlify
 from problem_solving.string.anagram import pal_anagram
 from problem_solving.string.one_away import one_away
 from problem_solving.string.compression import string_compression
+from problem_solving.string.rotation import string_rotation
 
 
 class TestStringFunctions(TestCase):
@@ -104,4 +105,14 @@ class TestStringFunctions(TestCase):
         ]
         for [test_string, expected] in data:
             actual = string_compression(test_string)
+            self.assertEqual(actual, expected)
+
+    def test_string_rotation(self):
+        data = [
+            ('waterbottle', 'erbottlewat', True),
+            ('foo', 'bar', False),
+            ('foo', 'foofoo', False)
+        ]
+        for [s1, s2, expected] in data:
+            actual = string_rotation(s1, s2)
             self.assertEqual(actual, expected)
