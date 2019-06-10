@@ -24,6 +24,12 @@ def remove_duplicates(head: LinkedList) -> LinkedList:
 
 
 def remove_node(node: LinkedList) -> None:
+    """
+    Removes given node from linked list
+
+    :param node:
+    :return:
+    """
 
     if node and node.next:
         node.value = node.next.value
