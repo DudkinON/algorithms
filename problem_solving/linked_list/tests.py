@@ -3,6 +3,7 @@ from data_structures import Node
 from problem_solving.linked_list.find_n_from_end import nth_from_last
 from problem_solving.linked_list.merge import merge_lists
 from problem_solving.linked_list import remove_duplicates
+from problem_solving.linked_list import remove_node
 
 
 class TestLinkList(TestCase):
@@ -85,4 +86,26 @@ class TestLinkList(TestCase):
 
         head = expect = self.gen_list_from_array([0])
 
+        self.check(head, expect)
+
+    def test_remove_node(self):
+
+        head = expect = self.gen_list_from_array([1, 2, 3])
+        node = Node(0)
+        child = head.next
+        head.next = node
+        node.next = child
+        self.check(head, self.gen_list_from_array([1, 0, 2, 3]))
+        remove_node(node)
+        self.check(head, expect)
+
+        del node
+        del head
+        del expect
+
+        head = expect = self.gen_list_from_array([1])
+        node = Node(10)
+        head.next = node
+        self.check(head, self.gen_list_from_array([1, 10]))
+        remove_node(node)
         self.check(head, expect)
