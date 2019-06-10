@@ -2,6 +2,7 @@ from unittest import TestCase
 from data_structures import Node
 from problem_solving.linked_list.find_n_from_end import nth_from_last
 from problem_solving.linked_list.merge import merge_lists
+from problem_solving.linked_list import remove_duplicates
 
 
 class TestLinkList(TestCase):
@@ -19,6 +20,16 @@ class TestLinkList(TestCase):
             for i in range(_from + 1, _to + 1):
                 current.next = Node(i)
                 current = current.next
+
+        return head
+
+    def gen_list_from_array(self, lst):
+        head = tail = Node(lst[0])
+
+        for i in range(1, len(lst)):
+            node = Node(lst[i])
+            tail.next = node
+            tail = tail.next
 
         return head
 
@@ -46,3 +57,32 @@ class TestLinkList(TestCase):
             self.assertEqual(node.value, val)
             val += 1
             node = node.next
+
+    def check(self, h, e):
+
+        while h and e:
+            self.assertEqual(h.value, e.value)
+            h = h.next
+            e = e.next
+
+    def test_remove_duplicates(self):
+
+        head = self.gen_list_from_array([1, 1, 2, 3, 4, 5, 2])
+        expect = self.gen_list_from_array([1, 2, 3, 4, 5])
+        remove_duplicates(head)
+        self.check(head, expect)
+
+        del head
+        del expect
+
+        head = self.gen_list_from_array([0, 0])
+        expect = self.gen_list_from_array([0])
+
+        self.check(head, expect)
+
+        del head
+        del expect
+
+        head = expect = self.gen_list_from_array([0])
+
+        self.check(head, expect)
