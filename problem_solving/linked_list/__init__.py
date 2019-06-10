@@ -2,6 +2,12 @@ from data_structures import Node as LinkedList
 
 
 def remove_duplicates(head: LinkedList) -> LinkedList:
+    """
+    Removes duplicates from linked list
+
+    :param head:
+    :return:
+    """
 
     node = head
     _map = set()
