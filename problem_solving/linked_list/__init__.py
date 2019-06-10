@@ -21,3 +21,10 @@ def remove_duplicates(head: LinkedList) -> LinkedList:
             node = node.next
 
     return head
+
+
+def remove_node(node: LinkedList) -> None:
+
+    if node and node.next:
+        node.value = node.next.value
+        node.next = node.next.next
