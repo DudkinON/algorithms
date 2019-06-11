@@ -4,6 +4,7 @@ from problem_solving.linked_list.find_n_from_end import nth_from_last
 from problem_solving.linked_list.merge import merge_lists
 from problem_solving.linked_list import remove_duplicates
 from problem_solving.linked_list import remove_node
+from problem_solving.linked_list.sum import sum_lists
 
 
 class TestLinkList(TestCase):
@@ -109,3 +110,22 @@ class TestLinkList(TestCase):
         self.check(head, self.gen_list_from_array([1, 10]))
         remove_node(node)
         self.check(head, expect)
+
+    def test_sum_lists(self):
+        
+        a = self.gen_list_from_array([7, 1, 6])
+        b = self.gen_list_from_array([5, 9, 2])
+        expect = self.gen_list_from_array([2, 1, 9])
+
+        result = sum_lists(a, b)
+
+        self.check(result, expect)
+
+        del a, b, expect
+
+        a = self.gen_list_from_array([0])
+        b = self.gen_list_from_array([1, 2])
+        expect = self.gen_list_from_array([1, 2])
+
+        result = sum_lists(a, b)
+        self.check(result, expect)
