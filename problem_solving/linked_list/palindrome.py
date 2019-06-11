@@ -2,7 +2,12 @@ from data_structures import Node
 
 
 def is_palindrome(ll: Node) -> bool:
+    """
+    Checks if linked list is a palindrome
 
+    :param ll: Linked list (First node)
+    :return: Boolean
+    """
     cache = []
     node = ll
 
