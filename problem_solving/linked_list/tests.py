@@ -5,6 +5,7 @@ from problem_solving.linked_list.merge import merge_lists
 from problem_solving.linked_list import remove_duplicates
 from problem_solving.linked_list import remove_node
 from problem_solving.linked_list.sum import sum_lists
+from problem_solving.linked_list.palindrome import is_palindrome
 
 
 class TestLinkList(TestCase):
@@ -112,7 +113,7 @@ class TestLinkList(TestCase):
         self.check(head, expect)
 
     def test_sum_lists(self):
-        
+
         a = self.gen_list_from_array([7, 1, 6])
         b = self.gen_list_from_array([5, 9, 2])
         expect = self.gen_list_from_array([2, 1, 9])
@@ -129,3 +130,19 @@ class TestLinkList(TestCase):
 
         result = sum_lists(a, b)
         self.check(result, expect)
+
+    def test_is_palindrome(self):
+
+        ll = self.gen_list_from_array([1, 2, 3, 4, 5, 4, 3, 2, 1])
+        self.assertEqual(True, is_palindrome(ll))
+
+        del ll
+
+        ll = self.gen_list_from_array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+        self.assertEqual(False, is_palindrome(ll))
+
+        del ll
+
+        ll = self.gen_list_from_array([0])
+
+        self.assertEqual(True, is_palindrome(ll))
