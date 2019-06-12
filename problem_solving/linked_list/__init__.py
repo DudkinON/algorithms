@@ -60,3 +60,21 @@ def intersection(a: LinkedList, b: LinkedList) -> LinkedList or None:
         ll = ll.next
 
     return None
+
+
+def loop_detection(ll: LinkedList) -> LinkedList or None:
+
+    cache = set()
+
+    node = ll
+
+    while node:
+
+        if node in cache:
+            return node
+        else:
+            cache.add(node)
+
+        node = node.next
+
+    return None
