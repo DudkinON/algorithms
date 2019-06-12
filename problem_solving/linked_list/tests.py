@@ -6,6 +6,7 @@ from problem_solving.linked_list import remove_duplicates
 from problem_solving.linked_list import remove_node
 from problem_solving.linked_list.sum import sum_lists
 from problem_solving.linked_list.palindrome import is_palindrome
+from problem_solving.linked_list import intersection
 
 
 class TestLinkList(TestCase):
@@ -146,3 +147,15 @@ class TestLinkList(TestCase):
         ll = self.gen_list_from_array([0])
 
         self.assertEqual(True, is_palindrome(ll))
+
+    def test_intersection(self):
+
+        a = self.gen_list_from_array([1, 2, 3])
+        b = self.gen_list_from_array([4, 5, 6])
+
+        self.assertEqual(None, intersection(a, b))
+
+        a.next.next.next = b
+
+        self.assertEqual(b, intersection(a, b))
+
