@@ -37,6 +37,14 @@ def remove_node(node: LinkedList) -> None:
 
 
 def intersection(a: LinkedList, b: LinkedList) -> LinkedList or None:
+    """
+    if two linked lists have an intersection return an intersection node,
+    else None
+
+    :param a: Linked lists
+    :param b: Linked lists
+    :return: Node of Linked lists || None
+    """
 
     cache, ll = set(), a
 
