@@ -63,6 +63,12 @@ def intersection(a: LinkedList, b: LinkedList) -> LinkedList or None:
 
 
 def loop_detection(ll: LinkedList) -> LinkedList or None:
+    """
+    Detect and return first loop node of linked list or None
+
+    :param ll:
+    :return:
+    """
 
     cache = set()
 
