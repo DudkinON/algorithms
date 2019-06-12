@@ -34,3 +34,21 @@ def remove_node(node: LinkedList) -> None:
     if node and node.next:
         node.value = node.next.value
         node.next = node.next.next
+
+
+def intersection(a: LinkedList, b: LinkedList) -> LinkedList or None:
+
+    cache, ll = set(), a
+
+    while ll:
+        cache.add(ll)
+        ll = ll.next
+
+    ll = b
+
+    while ll:
+        if ll in cache:
+            return ll
+        ll = ll.next
+
+    return None
