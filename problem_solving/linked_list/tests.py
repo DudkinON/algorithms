@@ -7,6 +7,7 @@ from problem_solving.linked_list import remove_node
 from problem_solving.linked_list.sum import sum_lists
 from problem_solving.linked_list.palindrome import is_palindrome
 from problem_solving.linked_list import intersection
+from problem_solving.linked_list import loop_detection
 
 
 class TestLinkList(TestCase):
@@ -159,3 +160,18 @@ class TestLinkList(TestCase):
 
         self.assertEqual(b, intersection(a, b))
 
+    def test_loop_detection(self):
+
+        ll = self.gen_list_from_array([1, 2, 3, 4, 5, 6])
+
+        self.assertEqual(loop_detection(ll), None)
+
+        node = ll
+
+        while node:
+            if node.next is None:
+                node.next = ll.next
+                break
+            node = node.next
+
+        self.assertEqual(loop_detection(ll), ll.next)
