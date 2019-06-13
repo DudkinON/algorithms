@@ -1,4 +1,10 @@
 def periodic(s: str) -> str:
+    """
+    Finds repetitive substring in given string
+
+    :param s: String
+    :return: String
+    """
 
     if len(s) == 0:
         return ""
