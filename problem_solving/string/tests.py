@@ -9,6 +9,7 @@ from problem_solving.string.anagram import pal_anagram
 from problem_solving.string.one_away import one_away
 from problem_solving.string.compression import string_compression
 from problem_solving.string.rotation import string_rotation
+from problem_solving.string.periodic import periodic
 
 
 class TestStringFunctions(TestCase):
@@ -116,3 +117,11 @@ class TestStringFunctions(TestCase):
         for [s1, s2, expected] in data:
             actual = string_rotation(s1, s2)
             self.assertEqual(actual, expected)
+
+    def test_periodic(self):
+        self.assertEqual(periodic("ababab"), "ab")
+        self.assertEqual(periodic("xxxxxx"), "x")
+        self.assertEqual(periodic("abaaba"), "aba")
+        self.assertEqual(periodic(""), "")
+        self.assertEqual(periodic("a"), "a")
+        self.assertEqual(periodic("foobar"), "foobar")
