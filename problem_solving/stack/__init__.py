@@ -3,6 +3,20 @@
 
 
 class Stack:
+    """
+    Time complexity:
+        method:
+            is_empty: O(1)
+            push: O(1)
+            pop: O(1)
+            min: O(1)
+    Space complexity:
+        method:
+            is_empty: O(1)
+            push: O(1)
+            pop: O(1)
+            min: O(1)
+    """
 
     def __init__(self, num=None):
         self.__data = [] if num is None else [num]
