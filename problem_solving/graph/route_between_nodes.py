@@ -2,6 +2,15 @@ from queue import Queue
 
 
 def route_between_nodes(graph: dict, start, end) -> bool:
+    """
+    Try to find path between two vertexes return True if path
+    founded otherwise False
+
+    :param graph: Dictionary
+    :param start: String
+    :param end: String
+    :return: Boolean
+    """
 
     q = Queue()
     q.put([start])
