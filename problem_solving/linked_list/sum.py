@@ -2,6 +2,13 @@ from data_structures import Node
 
 
 def sum_lists(ll_a: Node, ll_b: Node) -> Node:
+    """
+    Calculates the sum of numbers that represents by two linked lists
+
+    :param ll_a: Linked list
+    :param ll_b: Linked list
+    :return: Linked list
+    """
 
     n1, n2 = ll_a, ll_b
     ll = head = None
